@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sample Screen:</h2>
+    <input type="text" id="txttext" />
+    <button id="btnAdd" onclick="addToArray()">Add</button>
+    <button id="btnDisplay" onclick="displayArray()">Display</button>
+    <div id="result"></div>
+    <hr />
+
+    <script>
+      let x = 0;
+      let array = [];
+
+      console.log(111, array.toString());
+      function addToArray() {
+        array[x] = document.getElementById("txttext").value;
+        // alert("Element: " + array[x] + " add at index " + x);
+        x++;
+        document.getElementById("txttext").value = "";
+      }
+
+      function displayArray() {
+        let e = "<hr>";
+        console.log(11, e);
+        for (let i = 0; i < array.length; i++) {
+          e += "Element " + i + " = " + array[i] + "<br>";
+          console.log(22, e);
+        }
+
+        document.getElementById("result").innerHTML = e;
+      }
+    </script>
+  </body>
+</html>
