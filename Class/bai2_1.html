@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="idtext" />Nhập vào từ cần dịch <br />
+    <br />
+    <button onclick="translate1()">Translate</button>
+    <p id="idresult">Kết quả là:</p>
+
+    <script>
+      const EL = ["you", "me", "love", "hate", "enjoy"];
+      const VN = ["bạn", "tôi", "yêu", "ghét", "thích"];
+
+      function translate1() {
+        let letter = document.querySelector("#idtext").value;
+        letter = letter.toLowerCase().trim();
+        const result = document.querySelector("#idresult");
+        const resultWord = [];
+        let index = 0;
+        console.log(11, letter);
+        console.log(22, EL.length);
+        // result.innerHTML = letter;
+
+        if (EL.includes(letter)) {
+          for (let i = 0; i < EL.length; i++) {
+            if (EL[i] == letter) {
+              index = i;
+              break;
+            }
+          }
+          console.log(33, index);
+          resultWord.push(VN[index]);
+        } else if (VN.includes(letter)) {
+          for (let i = 0; i < VN.length; i++) {
+            if (VN[i] == letter) {
+              index = i;
+              break;
+            }
+          }
+          resultWord.push(EL[index]);
+        } else {
+          resultWord = alert("Từ bạn nhập không có trong từ điển");
+        }
+        result.innerHTML = resultWord;
+        console.log(55, index);
+      }
+    </script>
+  </body>
+</html>

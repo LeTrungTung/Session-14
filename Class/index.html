@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Danh sách món ăn:</h3>
+    <ul id="idlistFruit"></ul>
+
+    <script>
+      const fruits = [
+        "Coffee",
+        "Tea",
+        "Milk",
+        "Bread",
+        "Biscut",
+        "Candy",
+      ];
+      const fruitlist = document.querySelector("#idlistFruit");
+      let content = "";
+      for (const fruit of fruits) {
+        content += `<li>${fruit}</li>`;
+      }
+      fruitlist.innerHTML = content;
+
+      const multi_table = [];
+      for (let row = 2; row <= 9; row++) {
+        multi_table[row] = [];
+        for (let col = 0; col <= 9; col++) {
+          multi_table[row][col] = [row + 2, col + 1];
+        }
+      }
+      console.log("Kiểm tra cửu chương"), multi_table;
+      const myTable = document.querySelector("#my-table");
+      let contenTable = "";
+
+      for (const row of multi_table) {
+        contenTable += "<tr>";
+        for (const col of multi_table[row]) {
+          contenTable += `<td>${row} x ${col}=${row * col}`;
+        }
+      }
+    </script>
+  </body>
+</html>

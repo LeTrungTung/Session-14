@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Nối phần tử của mảng</h3>
+
+    <button onclick="handleNumber()">
+      Nhập dãy số rồi phân tách
+    </button>
+    <input
+      type="text"
+      id="number-change"
+      oninput="handleOninput(this)"
+    />
+    <p id="result-change"></p>
+    <p id="result-change-2"></p>
+
+    <!-- Bài 3: doi chu hoa và thường -->
+    <input type="text" id="idtext" oninput="chuHoaThuong(this)" />
+    <p id="result-word"></p>
+
+    <script>
+      const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const lower = "abcdefghijklmnopqrstuvwxyz";
+
+      function chuHoaThuong() {
+        const inputword = document.querySelector("#idtext").value;
+        const outputword = document.querySelector("#result-word");
+        let result = [];
+        let len = inputword.length;
+        for (let i = 0; i < len; i++) {
+          if (upper.includes(inputword[i])) {
+            result.push(inputword[i].toLowerCase());
+          } else if (lower.includes(inputword[i])) {
+            result.push(inputword[i].toUpperCase());
+          } else {
+            result.push(inputword[i]);
+          }
+          console.log(44, result);
+        }
+        // console.log(result.join(""));
+        outputword.innerHTML = result.join("");
+      }
+
+      //   //   Bài 1
+      //   const myColor = ["Red", "Green", "White", "Black"];
+      //   const noimang1 = myColor.toString();
+      //   const noimang2 = myColor.join("-");
+      //   const result = document.querySelector("#idnoimang");
+      //   result.innerHTML = noimang1 + "<br>" + noimang2;
+
+      //   //   Bài 2
+      //   //   const dayso = document.querySelector("#idnumber");
+      //   //   const mang1 = [dayso];
+      //   //   console.log(111, mang1);
+
+      //   //   Bai 2 demo
+      //   const result_1 = document.querySelector("result-change");
+      //   let resultString_1 = "";
+      //   const valueNumber=document.querySelector(#number-change).value
+      //   function handleNumber() {
+      //          for (let i = 0; i < valueNumber.length; i++) {
+      //       if (
+      //         valueNumber[i] % 2 == 0 &&
+      //         valueNumber[i + 1] % 2 == 0
+      //       ) {
+      //         resultString_1 += valueNumber[i] + "-";
+      //       } else {
+      //         resultString_1 += valueNumber[i];
+      //       }
+      //     }
+      //     result_1.innerHTML = resultString_1;
+      //   }
+
+      //   function handleOninput(element) {
+      //     const valueInput = element.value;
+      //     let resultString_2 = [];
+      //     for (let i = 0; i < valueNumber.length; i++) {
+      //       if (
+      //         valueNumber[i] % 2 == 0 &&
+      //         valueNumber[i + 1] % 2 == 0
+      //       ) {
+      //         resultString_2=push(valueInput[i]+"-")
+      //       } else {
+      //         resultString_2=push(valueInput[i])
+      //       }
+      //     }
+      //     result_2.innerHTML = resultString_2.join("");
+      //   }
+    </script>
+  </body>
+</html>
